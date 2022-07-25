@@ -87,7 +87,7 @@ public class PassCar : Auto  //Класс легкового (пассажирс
                     case 1: return NowTank * 100 / AvgCons * 0.94;  //присутствует водитель и 1 пассажир 
                     case 2: return NowTank * 100 / AvgCons * 0.88;
                     case 3: return NowTank * 100 / AvgCons * 0.82;
-                    case 4: return NowTank * 100 / AvgCons  * 0.76; //присутствует водитель и 4 (максимум) пассажира  
+                    case 4: return NowTank * 100 / AvgCons * 0.76; //присутствует водитель и 4 (максимум) пассажира  
                     default: return 0;
                 }
             }
@@ -131,7 +131,8 @@ public class Truck : Auto  //Класс грузового авто
 
 public class SportCar : PassCar  //Класс легкового (спортивного) авто (предположим, что это к примеру двухместное купе)
 {
-    public SportCar(double avgCons, double fullTank, double nowTank, double speed, int passCount = 0, string type = "Спортивный") : base(avgCons, fullTank, nowTank, speed, passCount, type) { }
+    public SportCar(double avgCons, double fullTank, double nowTank, double speed, int passCount = 0, string type = "Спортивный") 
+             : base(avgCons, fullTank, nowTank, speed, passCount, type) { }
 
     public override double Rest(Auto car) //Остаток хода на полном баке в км.
     {
