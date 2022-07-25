@@ -1,5 +1,5 @@
 ﻿
-PassCar passcar1 = new PassCar(9.2, 60, 40, 90, 2);  //Расход, Объем бака, Наличие топлива, Скорость,(не обзяательно: Наличие пассажиров).
+PassCar passcar1 = new PassCar(9.2, 60, 40, 90, 2);  //Расход, Объем бака, Наличие топлива, Скорость,(Необзяательно: Наличие пассажиров).
 Console.WriteLine($"Тип транспортного средства: {passcar1.Type};\n\nТекущая скорость: {passcar1.Speed} км/ч;\nРасход: {passcar1.AvgCons} л/100км;\n\n" +
                   $"Объем полного бака: {passcar1.FullTank} литров;\nСейчас в баке: {passcar1.NowTank} литров;\n\nПассажиров: {passcar1.PassCount};");
 
@@ -26,11 +26,11 @@ Console.WriteLine($"Время до цели " + string.Format("{0:0}", sportc1.
 
 public abstract class Auto
 {
-    public string Type { get; set; }  //Тип ТС
-    public double AvgCons { get; set; }  //Средний расход
+    public string Type { get; set; }      //Тип ТС
+    public double AvgCons { get; set; }   //Средний расход
     public double FullTank { get; set; }  //Объем полного бака
-    public double NowTank { get; set; }  //Топлива в баке на данный момент
-    public double Speed { get; set; }  //Скорость автомобиля (в данном случае текущая) 
+    public double NowTank { get; set; }   //Топлива в баке на данный момент
+    public double Speed { get; set; }     //Скорость автомобиля (в данном случае текущая) 
 
     public Auto(string type, double avgCons, double fullTank, double nowTank, double speed)  //конструктор абстр класса
     {
@@ -87,7 +87,7 @@ public class PassCar : Auto  //Класс легкового (пассажирс
                     case 1: return NowTank * 100 / AvgCons * 0.94;  //присутствует водитель и 1 пассажир 
                     case 2: return NowTank * 100 / AvgCons * 0.88;
                     case 3: return NowTank * 100 / AvgCons * 0.82;
-                    case 4: return NowTank * 100 / AvgCons  * 0.76; //присутствует водитель и 4 (максимум) пассажира  
+                    case 4: return NowTank * 100 / AvgCons * 0.76; //присутствует водитель и 4 (максимум) пассажира  
                     default: return 0;
                 }
             }
