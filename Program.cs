@@ -131,7 +131,8 @@ public class Truck : Auto  //Класс грузового авто
 
 public class SportCar : PassCar  //Класс легкового (спортивного) авто (предположим, что это к примеру двухместное купе)
 {
-    public SportCar(double avgCons, double fullTank, double nowTank, double speed, int passCount = 0, string type = "Спортивный") : base(avgCons, fullTank, nowTank, speed, passCount, type) { }
+    public SportCar(double avgCons, double fullTank, double nowTank, double speed, int passCount = 0, string type = "Спортивный") 
+             : base(avgCons, fullTank, nowTank, speed, passCount, type) { }
 
     public override double Rest(Auto car) //Остаток хода на полном баке в км.
     {
