@@ -1,0 +1,21 @@
+CREATE DATABASE TestDB
+GO
+USE TestDB;
+
+CREATE TABLE Customers
+(
+Id INT NOT NULL PRIMARY KEY IDENTITY,
+Name NVARCHAR(20) NOT NULL
+)
+
+CREATE TABLE Orders
+(
+Id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+CustomersId INT NOT NULL REFERENCES Customers(Id) ON DELETE CASCADE
+)
+
+INSERT INTO Customers (Name) VALUES ('Max'),('Pavel'), ('Ivan'), ('Leonid');
+INSERT INTO Orders (CustomersId) VALUES (2),(4);
+
+SELECT Name FROM Customers  WHERE Id NOT IN (SELECT customersId FROM Orders)
+
